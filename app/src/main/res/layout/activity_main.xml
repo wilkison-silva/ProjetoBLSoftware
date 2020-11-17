@@ -17,4 +17,10 @@
         android:id="@+id/btnCadastroProduto"
         android:text="Cadastro de Produto"/>
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnCListarProduto"
+        android:text="Lista de Produtos"/>
+
 </LinearLayout>

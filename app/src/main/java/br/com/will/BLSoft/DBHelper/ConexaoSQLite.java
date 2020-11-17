@@ -3,6 +3,7 @@ package br.com.will.BLSoft.DBHelper;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 import androidx.annotation.Nullable;
 
@@ -26,9 +27,11 @@ public class ConexaoSQLite extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
 
-        String sqlTabelaProduto = "CREATE TABLE IF NOT EXISTS produto" +
+        Log.i("Banco de Dados", "Criado pela primeira vez");
+
+        String sqlTabelaProduto = "CREATE TABLE produto" +
                 "(" +
-                "id INTEGER PRIMARY KEY,"+
+                "id INTEGER PRIMARY KEY AUTOINCREMENT,"+
                 "nome TEXT,"+
                 "quantidade_em_estoque INTEGER,"+
                 "preco REAL"+
@@ -40,6 +43,6 @@ public class ConexaoSQLite extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-
+        onCreate(db);
     }
 }
