@@ -1,15 +1,12 @@
 package br.com.will.BLSoft.Activities;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import java.security.ProtectionDomain;
-import java.sql.BatchUpdateException;
+import androidx.appcompat.app.AppCompatActivity;
 
 import br.com.will.BLSoft.Controller.ProdutoController;
 import br.com.will.BLSoft.DBHelper.ConexaoSQLite;

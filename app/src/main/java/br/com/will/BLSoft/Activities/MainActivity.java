@@ -1,18 +1,14 @@
 package br.com.will.BLSoft.Activities;
 //primeirokfodkfdopfjdsofndsjifdsfjdkn
-import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
-import br.com.will.BLSoft.Activities.ActivityListarProdutos;
-import br.com.will.BLSoft.Activities.ActivityProduto;
-import br.com.will.BLSoft.Controller.ProdutoController;
+import androidx.appcompat.app.AppCompatActivity;
+
 import br.com.will.BLSoft.DBHelper.ConexaoSQLite;
-import br.com.will.BLSoft.Model.Produto;
 import br.com.will.BLSoft.R;
 
 public class MainActivity extends AppCompatActivity {
@@ -26,8 +22,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        deleteDatabase("bl_produtos_app");
-        System.out.println("Excluindo o banco de dados");
+        //deleteDatabase("bl_produtos_app");
+        //System.out.println("Excluindo o banco de dados");
 
         ConexaoSQLite conexaoSQLite = ConexaoSQLite.getInstancia(MainActivity.this);
 
