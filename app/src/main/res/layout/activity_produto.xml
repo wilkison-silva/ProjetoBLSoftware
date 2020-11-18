@@ -8,6 +8,17 @@
     tools:context=".Activities.ActivityProduto">
 
     <EditText
+        android:id="@+id/edtCodigoProduto"
+        android:hint="Código de barras"
+        android:inputType="numberSigned"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="10dp"/>
+
+    <EditText
         android:id="@+id/edtNomeProduto"
         android:hint="Nome do produto"
         android:layout_width="match_parent"

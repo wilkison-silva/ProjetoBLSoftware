@@ -18,6 +18,7 @@ import br.com.will.BLSoft.R;
 
 public class ActivityProduto extends AppCompatActivity {
 
+    private EditText edtCodigoProduto;
     private EditText edtNomeProduto;
     private EditText edtQuantidadeProduto;
     private EditText edtPrecoProduto;
@@ -32,6 +33,7 @@ public class ActivityProduto extends AppCompatActivity {
 
         ConexaoSQLite conexaoSQLite  = ConexaoSQLite.getInstancia(ActivityProduto.this);
 
+        edtCodigoProduto = (EditText) findViewById(R.id.edtCodigoProduto);
         edtNomeProduto = (EditText) findViewById(R.id.edtNomeProduto);
         edtQuantidadeProduto = (EditText) findViewById(R.id.edtQuantidadeProduto);
         edtPrecoProduto = (EditText) findViewById(R.id.edtPrecoProduto);
@@ -61,6 +63,13 @@ public class ActivityProduto extends AppCompatActivity {
     private Produto getDadosProdutoFormulario(){
         this.produto = new Produto();
 
+        if(this.edtCodigoProduto.getText().toString().isEmpty() == false) {
+            this.produto.setId(Long.parseLong(this.edtCodigoProduto.getText().toString()));
+        }
+        else {
+            return null;
+        }
+
         if (this.edtNomeProduto.getText().toString().isEmpty() == false){
             this.produto.setNome(this.edtNomeProduto.getText().toString());
         }
@@ -69,12 +78,14 @@ public class ActivityProduto extends AppCompatActivity {
         }
         if (this.edtQuantidadeProduto.getText().toString().isEmpty() == false){
             int quantidadeProduto = Integer.parseInt(this.edtQuantidadeProduto.getText().toString());
+            this.produto.setQuantidadeEmEstoque(quantidadeProduto);
         }
         else {
             return null;
         }
         if (this.edtPrecoProduto.getText().toString().isEmpty() == false){
             double precoProduto = Integer.parseInt(this.edtQuantidadeProduto.getText().toString());
+            this.produto.setPreco(precoProduto);
         }
         else{
             return null;

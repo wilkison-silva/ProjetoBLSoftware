@@ -1,6 +1,5 @@
+package br.com.will.BLSoft.Activities;
 //primeirokfodkfdopfjdsofndsjifdsfjdkn
-package br.com.will.BLSoft;
-
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -14,6 +13,7 @@ import br.com.will.BLSoft.Activities.ActivityProduto;
 import br.com.will.BLSoft.Controller.ProdutoController;
 import br.com.will.BLSoft.DBHelper.ConexaoSQLite;
 import br.com.will.BLSoft.Model.Produto;
+import br.com.will.BLSoft.R;
 
 public class MainActivity extends AppCompatActivity {
 

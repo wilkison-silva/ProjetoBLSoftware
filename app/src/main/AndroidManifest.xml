@@ -14,7 +14,7 @@
             android:label="Lista de Produtos"></activity>
         <activity android:name=".Activities.ActivityProduto" />
         <activity android:name=".Activities.ActivityVenda" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".Activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
