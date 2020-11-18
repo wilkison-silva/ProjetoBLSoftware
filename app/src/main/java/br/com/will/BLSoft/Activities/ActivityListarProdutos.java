@@ -1,7 +1,9 @@
 package br.com.will.BLSoft.Activities;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Adapter;
@@ -43,7 +45,29 @@ public class ActivityListarProdutos extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Produto produto = (Produto) adapterListaProdutos.getItem(position);
 
-                Toast.makeText(ActivityListarProdutos.this, "Produto: " + produto.getNome(), Toast.LENGTH_LONG).show();
+                AlertDialog.Builder janelaDeEscolha = new AlertDialog.Builder(ActivityListarProdutos.this);
+                janelaDeEscolha.setTitle("Opções");
+                janelaDeEscolha.setMessage("Selecione uma ação");
+                janelaDeEscolha.setNeutralButton("Cancelar", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                    }
+                });
+                janelaDeEscolha.setNegativeButton("Excluir", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                    }
+                });
+                janelaDeEscolha.setPositiveButton("Editar", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                    }
+                });
+
+                janelaDeEscolha.create().show();
             }
         });
     }
