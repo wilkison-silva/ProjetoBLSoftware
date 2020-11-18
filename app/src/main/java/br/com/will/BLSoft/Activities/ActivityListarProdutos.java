@@ -57,7 +57,17 @@ public class ActivityListarProdutos extends AppCompatActivity {
                 janelaDeEscolha.setNegativeButton("Excluir", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
+                        boolean excluiu = produtoController.exluirProdutoController(produto.getId());
+
                         dialog.cancel();
+
+                        if(excluiu){
+                            adapterListaProdutos.removerProduto(position);
+                            Toast.makeText(ActivityListarProdutos.this, "Produto exclúido",Toast.LENGTH_LONG).show();
+                        }
+                        else {
+                            Toast.makeText(ActivityListarProdutos.this, "Erro ao excluir",Toast.LENGTH_LONG).show();
+                        }
                     }
                 });
                 janelaDeEscolha.setPositiveButton("Editar", new DialogInterface.OnClickListener() {
