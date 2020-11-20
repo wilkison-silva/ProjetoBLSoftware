@@ -7,6 +7,13 @@
     tools:context=".Activities.ActivityListarProdutos"
     android:orientation="vertical">
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/buttonAtualizarLista"
+        android:text="Atualizar lista"/>
+
+
     <ListView
         android:id="@+id/listViewProdutos"
         android:layout_width="match_parent"

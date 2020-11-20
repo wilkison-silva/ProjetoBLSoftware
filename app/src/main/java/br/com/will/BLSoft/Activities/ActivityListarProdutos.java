@@ -4,10 +4,12 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Adapter;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -25,13 +27,14 @@ public class ActivityListarProdutos extends AppCompatActivity {
     private ListView listViewProdutos;
     private List<Produto> produtoList;
     private AdapterListaProdutos adapterListaProdutos;
+    private Button buttonAtualizarLista;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listar_produtos);
 
-        //TODO buscar os produtos no banco
+        buttonAtualizarLista = (Button) findViewById(R.id.buttonAtualizarLista);
 
         ProdutoController produtoController = new ProdutoController(ConexaoSQLite.getInstancia(ActivityListarProdutos.this));
         produtoList = produtoController.getListaProdutosController();
@@ -73,11 +76,30 @@ public class ActivityListarProdutos extends AppCompatActivity {
                 janelaDeEscolha.setPositiveButton("Editar", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        dialog.cancel();
+
+                        Bundle bundle = new Bundle();
+                        bundle.putLong("id_produto",produto.getId());
+                        bundle.putString("nome_produto",produto.getNome());
+                        bundle.putInt("quantidade_em_estoque",produto.getQuantidadeEmEstoque());
+                        bundle.putDouble("preco_produto",produto.getPreco());
+
+                        Intent intent = new Intent(ActivityListarProdutos.this, ActivityEditarProdutos.class);
+                        intent.putExtras(bundle);
+                        startActivity(intent);
+
                     }
                 });
 
                 janelaDeEscolha.create().show();
+            }
+        });
+
+        buttonAtualizarLista.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ProdutoController produtoController = new ProdutoController(ConexaoSQLite.getInstancia(ActivityListarProdutos.this));
+                adapterListaProdutos.atualizarLista(produtoController.getListaProdutosController());
+
             }
         });
     }

@@ -8,10 +8,11 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-
         android:theme="@style/Theme.BLSoftwareApp">
-        <activity android:name=".Activities.ActivityListarProdutos"
-            android:label="Lista de Produtos"></activity>
+        <activity android:name=".Activities.ActivityEditarProdutos"></activity>
+        <activity
+            android:name=".Activities.ActivityListarProdutos"
+            android:label="Lista de Produtos" />
         <activity android:name=".Activities.ActivityProduto" />
         <activity android:name=".Activities.ActivityVenda" />
         <activity android:name=".Activities.MainActivity">

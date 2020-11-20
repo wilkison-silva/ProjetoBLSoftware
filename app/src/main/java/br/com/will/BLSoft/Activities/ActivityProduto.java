@@ -60,13 +60,13 @@ public class ActivityProduto extends AppCompatActivity {
     private Produto getDadosProdutoFormulario(){
         this.produto = new Produto();
 
-        if(this.edtCodigoProduto.getText().toString().isEmpty() == false) {
+        /*if(this.edtCodigoProduto.getText().toString().isEmpty() == false) {
             this.produto.setId(Long.parseLong(this.edtCodigoProduto.getText().toString()));
         }
         else {
             return null;
         }
-
+*/
         if (this.edtNomeProduto.getText().toString().isEmpty() == false){
             this.produto.setNome(this.edtNomeProduto.getText().toString());
         }
@@ -81,7 +81,7 @@ public class ActivityProduto extends AppCompatActivity {
             return null;
         }
         if (this.edtPrecoProduto.getText().toString().isEmpty() == false){
-            double precoProduto = Integer.parseInt(this.edtQuantidadeProduto.getText().toString());
+            double precoProduto = Double.parseDouble(this.edtQuantidadeProduto.getText().toString());
             this.produto.setPreco(precoProduto);
         }
         else{
