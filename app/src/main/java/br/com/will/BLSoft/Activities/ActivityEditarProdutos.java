@@ -54,16 +54,16 @@ public class ActivityEditarProdutos extends AppCompatActivity {
                     ProdutoController produtoController = new ProdutoController(ConexaoSQLite.getInstancia(ActivityEditarProdutos.this));
                     boolean atualizar = produtoController.atualizarProdutoController(produto);
                     if (atualizar){
-                        Toast.makeText(ActivityEditarProdutos.this, "Produto alterado com sucesso",Toast.LENGTH_LONG).show();
+                        Toast.makeText(ActivityEditarProdutos.this, R.string.activity_editar_produtos_produto_alterado,Toast.LENGTH_LONG).show();
                     }
                     else {
-                        Toast.makeText(ActivityEditarProdutos.this, "Produto não pode ser alterado",Toast.LENGTH_LONG).show();
+                        Toast.makeText(ActivityEditarProdutos.this, R.string.activity_editar_produtos_nao_produto_alterado,Toast.LENGTH_LONG).show();
                     }
 
 
                 }
                 else {
-                    Toast.makeText(ActivityEditarProdutos.this, "Todos os campos são obrigatórios", Toast.LENGTH_LONG).show();
+                    Toast.makeText(ActivityEditarProdutos.this, R.string.activity_editar_produtos_preencher_todos_os_campos, Toast.LENGTH_LONG).show();
                 }
             }
         });

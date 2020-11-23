@@ -18,6 +18,8 @@
     <string name="activity_listas_produtos_opcao_editar">Editar</string>
     <string name="activity_listas_produtos_produto_excluido">Produto excluído</string>
     <string name="activity_listas_produtos_erro_ao_excluir">Erro ao excluir</string>
-
+    <string name="activity_editar_produtos_produto_alterado">Produto alterado com sucesso</string>
+    <string name="activity_editar_produtos_nao_produto_alterado">Erro ao alterar produto</string>
+    <string name="activity_editar_produtos_preencher_todos_os_campos">Todos os campos são obrigatórios</string>
 
 </resources>
