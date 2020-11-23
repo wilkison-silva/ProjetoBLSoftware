@@ -49,15 +49,15 @@ public class ActivityListarProdutos extends AppCompatActivity {
                 Produto produto = (Produto) adapterListaProdutos.getItem(position);
 
                 AlertDialog.Builder janelaDeEscolha = new AlertDialog.Builder(ActivityListarProdutos.this);
-                janelaDeEscolha.setTitle("Opções");
-                janelaDeEscolha.setMessage("Selecione uma ação");
-                janelaDeEscolha.setNeutralButton("Cancelar", new DialogInterface.OnClickListener() {
+                janelaDeEscolha.setTitle(R.string.activity_listas_produtos_opcoes_dialog);
+                janelaDeEscolha.setMessage(R.string.activity_listas_produtos_message_dialog);
+                janelaDeEscolha.setNeutralButton(R.string.activity_listas_produtos_opcao_cancelar, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         dialog.cancel();
                     }
                 });
-                janelaDeEscolha.setNegativeButton("Excluir", new DialogInterface.OnClickListener() {
+                janelaDeEscolha.setNegativeButton(R.string.activity_listas_produtos_opcao_excluir, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         boolean excluiu = produtoController.exluirProdutoController(produto.getId());
@@ -66,14 +66,14 @@ public class ActivityListarProdutos extends AppCompatActivity {
 
                         if(excluiu){
                             adapterListaProdutos.removerProduto(position);
-                            Toast.makeText(ActivityListarProdutos.this, "Produto exclúido",Toast.LENGTH_LONG).show();
+                            Toast.makeText(ActivityListarProdutos.this, R.string.activity_listas_produtos_produto_excluido,Toast.LENGTH_LONG).show();
                         }
                         else {
-                            Toast.makeText(ActivityListarProdutos.this, "Erro ao excluir",Toast.LENGTH_LONG).show();
+                            Toast.makeText(ActivityListarProdutos.this, R.string.activity_listas_produtos_erro_ao_excluir,Toast.LENGTH_LONG).show();
                         }
                     }
                 });
-                janelaDeEscolha.setPositiveButton("Editar", new DialogInterface.OnClickListener() {
+                janelaDeEscolha.setPositiveButton(R.string.activity_listas_produtos_opcao_editar, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
 

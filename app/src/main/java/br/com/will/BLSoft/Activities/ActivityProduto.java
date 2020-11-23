@@ -45,12 +45,12 @@ public class ActivityProduto extends AppCompatActivity {
                 if (produto != null){
                     ProdutoController produtoController = new ProdutoController(conexaoSQLite);
                     produtoController.salvarProdutoController(produto);
-                    Toast.makeText(ActivityProduto.this, "Produto salvo com sucesso",Toast.LENGTH_LONG).show();
-                    System.out.println("Testando");
+                    Toast.makeText(ActivityProduto.this, R.string.activity_produto_produto_salvo_com_sucesso,Toast.LENGTH_LONG).show();
+                    //System.out.println("Testando");
                 }
                 else {
-                    Toast.makeText(ActivityProduto.this, "Todos os campos são obrigatórios", Toast.LENGTH_LONG).show();
-                    System.out.println("Falhou");
+                    Toast.makeText(ActivityProduto.this, R.string.activity_produto_produto_nao_salvo_com_sucesso, Toast.LENGTH_LONG).show();
+                    //System.out.println("Falhou");
                 }
             }
         });

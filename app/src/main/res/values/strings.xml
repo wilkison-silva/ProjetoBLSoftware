@@ -9,5 +9,15 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
-    <string name="teste">testando</string>
+    <string name="activity_produto_produto_salvo_com_sucesso">Produto salvo com sucesso</string>
+    <string name="activity_produto_produto_nao_salvo_com_sucesso">Erro ao salvar produto</string>
+    <string name="activity_listas_produtos_opcoes_dialog">Opções</string>
+    <string name="activity_listas_produtos_message_dialog">Selecione uma ação</string>
+    <string name="activity_listas_produtos_opcao_cancelar">Cancelar</string>
+    <string name="activity_listas_produtos_opcao_excluir">Excluir</string>
+    <string name="activity_listas_produtos_opcao_editar">Editar</string>
+    <string name="activity_listas_produtos_produto_excluido">Produto excluído</string>
+    <string name="activity_listas_produtos_erro_ao_excluir">Erro ao excluir</string>
+
+
 </resources>
