@@ -39,6 +39,24 @@ public class ConexaoSQLite extends SQLiteOpenHelper {
 
         db.execSQL(sqlTabelaProduto);
 
+        String sqlTabelaVenda = "CREATE TABLE venda" +
+                "("+
+                "id INTEGER PRIMARY KEY AUTOINCREMENT,"+
+                "data INTEGER"+
+                ")";
+
+        db.execSQL(sqlTabelaVenda);
+
+        String sqlTabelaItemDaVenda = "CREATE TABLE item_da_venda"+
+                "("+
+                "id INTEGER PRIMARY KEY AUTOINCREMENT,"+
+                "quantidade_vendida INTEGER,"+
+                "id_produto INTEGER,"+
+                "id_venda INTEGER"+
+                ")";
+
+        db.execSQL(sqlTabelaItemDaVenda);
+
     }
 
     @Override
