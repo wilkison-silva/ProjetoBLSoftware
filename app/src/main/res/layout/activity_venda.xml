@@ -5,12 +5,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:layout_margin="10dp"
     tools:context=".Activities.ActivityVenda">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Selecione o produto"/>
 
     <Spinner
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:id="@+id/spinnerProdutos"/>
+
+    <Space
+        android:layout_width="wrap_content"
+        android:layout_height="10dp"/>
 
     <EditText
         android:layout_width="match_parent"
@@ -21,28 +31,41 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="horizontal">
 
         <Button
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/buttonAdicionarProduto"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
             android:text="Adicionar"/>
 
-        <Space
-            android:layout_width="25dp"
-            android:layout_height="wrap_content"/>
-
         <Button
-            android:layout_width="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:text="Finalizar venda"/>
     </LinearLayout>
+
+    <Space
+        android:layout_width="wrap_content"
+        android:layout_height="10dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Carrinho de compras"/>
+
+    <Space
+        android:layout_width="wrap_content"
+        android:layout_height="10dp"/>
 
     <ListView
         android:id="@+id/listViewProdutosAdicionados"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content" />
 
 </LinearLayout>
